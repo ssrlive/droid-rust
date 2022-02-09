@@ -24,7 +24,9 @@ cargo install cargo-apk
 ```
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export ANDROID_NDK_ROOT=$HOME/Android/Sdk/ndk/23.1.7779620
+```
 
+```
 cargo apk build --example looper
 cargo apk run --example looper
 
