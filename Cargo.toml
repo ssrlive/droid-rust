@@ -31,4 +31,4 @@ target_sdk_version = 31
 
 [package.metadata.android.application.activity]
 label = "RustActivity"
-exported = "true"
+exported = true
