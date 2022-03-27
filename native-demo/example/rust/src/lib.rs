@@ -50,8 +50,9 @@ use log::info;
 use ndk::trace;
 
 #[cfg_attr(target_os = "android",
-    ndk_glue::main( backtrace = "on",
-        // logger(level = "debug", tag = "hello-world"),
+    ndk_glue::main(
+        backtrace = "on",
+        logger(level = "debug", tag = "hello-world"),
     )
 )]
 pub fn main() {
