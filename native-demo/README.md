@@ -1,4 +1,4 @@
-# NativeActivity demo
+# NativeActivity rust demo
 
-Just a native demo app.
+Just a native rust demo app.
 
