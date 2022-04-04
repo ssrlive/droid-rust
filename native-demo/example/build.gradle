@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion '31.0.0'
+    ndkVersion '24.0.8215888'
+
+    defaultConfig {
+        applicationId 'com.nativeapp.demo'
+        minSdkVersion 23
+        targetSdkVersion 31
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+apply plugin: 'org.mozilla.rust-android-gradle.rust-android'
+
+cargo {
+    module  = "./rust"
+    libname = "nativedemo"
+    targets = ["arm64", "x86", "x86_64", "arm"]
+    prebuiltToolchains = true
+    apiLevel = 26
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+preBuild.dependsOn "cargoBuild"
