@@ -28,7 +28,7 @@ cargo {
     libname = "nativedemo"
     targets = ["arm64", "x86", "x86_64", "arm"]
     prebuiltToolchains = true
-    apiLevel = 21
+    apiLevel = 26
 }
 
 dependencies {
