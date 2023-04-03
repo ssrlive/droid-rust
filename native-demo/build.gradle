@@ -7,6 +7,7 @@ buildscript {
         }
     }
     dependencies {
+        // Can NOT update gradle version if you want to debug on vivo phone.
         classpath 'com.android.tools.build:gradle:7.1.2'
         classpath 'org.mozilla.rust-android-gradle:plugin:0.9.3'
     }
