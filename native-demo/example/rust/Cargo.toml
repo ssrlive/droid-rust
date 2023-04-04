@@ -5,15 +5,18 @@ authors = ["Nikita Krupitskas <krupitskaz@gmail.com>"]
 edition = "2021"
 
 [dependencies]
-android_logger = "0.13"
+eframe = { version = "0.21", features = [ "wgpu" ] }
+egui_demo_lib = "0.21"
 log = "0.4"
 
+[target.'cfg(not(target_os = "android"))'.dependencies]
+env_logger = "0.10"
+
 [target.'cfg(target_os="android")'.dependencies]
-android-activity = { version = "0.4", features = [ "native-activity" ] }
+android_logger = "0.13"
+winit = { version = "0.28", default-features = false, features = [ "android-native-activity" ] }
 
 [lib]
-path = "src/lib.rs"
-name = "nativedemo"
-crate-type = ["staticlib", "cdylib"]
+crate-type = ["cdylib", "lib"]
 
 [build-dependencies]

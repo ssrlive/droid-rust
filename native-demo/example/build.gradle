@@ -31,7 +31,7 @@ apply plugin: 'org.mozilla.rust-android-gradle.rust-android'
 cargo {
     module  = "./rust"
     libname = "nativedemo"
-    targets = ["arm64", "x86", "x86_64", "arm"]
+    targets = ["arm64"] // targets = ["arm64", "arm", "x86", "x86_64"]
     prebuiltToolchains = true
     apiLevel = 26
 }
